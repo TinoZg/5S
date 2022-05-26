@@ -14,10 +14,12 @@ export function brojRadnihDanaDo(datum, praznici) {
       pocetak.getDay() === 6
     ) {
       pocetak.setDate(pocetak.getDate() + 1);
+
       continue;
     }
     radnihDana++;
     pocetak.setDate(pocetak.getDate() + 1);
+    console.log(pocetak);
   }
   return radnihDana;
 }
@@ -86,6 +88,42 @@ export function dodajDane(datum, dana) {
   return noviDatum;
 }
 
+export function kolonaDatum(datum, brojIteracije) {
+  let pomocniDatum = new Date(datum.getTime());
+  if (brojIteracije === 0) {
+    return pomocniDatum;
+  }
+  if (brojIteracije === -1) {
+    while (brojIteracije < 0) {
+      pomocniDatum = dodajDane(pomocniDatum, -1);
+      if (
+        !(
+          praznici[pomocniDatum.toLocaleDateString("en-CA")] ||
+          pomocniDatum.getDay() === 0 ||
+          pomocniDatum.getDay() === 6
+        )
+      ) {
+        brojIteracije++;
+      }
+    }
+    return pomocniDatum;
+  }
+
+  while (brojIteracije > 0) {
+    pomocniDatum = dodajDane(pomocniDatum, 1);
+    if (
+      !(
+        praznici[pomocniDatum.toLocaleDateString("en-CA")] ||
+        pomocniDatum.getDay() === 0 ||
+        pomocniDatum.getDay() === 6
+      )
+    ) {
+      brojIteracije--;
+    }
+  }
+  return pomocniDatum;
+}
+
 export const praznici = {
   "2022-01-01": "Nova Godina",
   "2022-01-06": "Sveta tri kralja",
@@ -101,4 +139,5 @@ export const praznici = {
   "2022-11-18": "Sjećanje na Vukovar",
   "2022-12-25": "Božić",
   "2022-12-26": "Sveti Stjepan",
+  "2022-05-26": "TEST",
 };
