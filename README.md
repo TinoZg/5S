@@ -1,2 +1,1 @@
-# 5S
-5S raspored
+# 5S raspored za kuhinju
