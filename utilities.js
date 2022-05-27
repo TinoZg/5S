@@ -139,5 +139,4 @@ export const praznici = {
   "2022-11-18": "Sjećanje na Vukovar",
   "2022-12-25": "Božić",
   "2022-12-26": "Sveti Stjepan",
-  "2022-05-26": "TEST",
 };
