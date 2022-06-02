@@ -3,9 +3,9 @@ import {
   pomakniRasporedZa,
   formatDDMMYYYY,
   danUTjednu,
-  dodajDane,
   praznici,
   kolonaDatum,
+  prviRadniDanPrije,
 } from "./utilities.js";
 
 let osobe = [
@@ -25,7 +25,7 @@ let osobe = [
   "Tino",
 ];
 
-const danas = new Date();
+const danas = new Date("2022-05-31");
 danas.setHours(1, 0, 0);
 
 // Datum formatiran u oblik dd.mm.yyyy
@@ -34,10 +34,12 @@ danas.setHours(1, 0, 0);
 const dana = brojRadnihDanaDo(danas, praznici);
 osobe = pomakniRasporedZa(osobe, dana);
 
+const radniDan = prviRadniDanPrije(danas);
+
 for (let i = 0; i < osobe.length; i++) {
   const element = osobe[i];
   const [osoba, datum, dan] = document.getElementById(i).children;
   osoba.innerText = element;
-  datum.innerText = formatDDMMYYYY(kolonaDatum(danas, i - 1));
-  dan.innerText = danUTjednu(kolonaDatum(danas, i - 1));
+  datum.innerText = formatDDMMYYYY(kolonaDatum(radniDan, i - 1));
+  dan.innerText = danUTjednu(kolonaDatum(radniDan, i - 1));
 }
