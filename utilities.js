@@ -5,14 +5,14 @@
  * @returns {integer}
  */
 export function brojRadnihDanaDo(datum, praznici) {
-  let pocetak = new Date("2022-05-25");
+  let pocetak = new Date('2022-05-25');
   const ukupnoDana = brojDana(pocetak, datum);
   let brojRadnihDana = 0;
   for (let i = 0; i < ukupnoDana; i++) {
     pocetak = dodajDane(pocetak, 1);
     if (
       !(
-        praznici[pocetak.toLocaleDateString("en-CA")] ||
+        praznici[pocetak.toLocaleDateString('en-CA')] ||
         pocetak.getDay() === 0 ||
         pocetak.getDay() === 6
       )
@@ -52,25 +52,25 @@ export function danUTjednu(datum) {
   let dan;
   switch (datum.getDay()) {
     case 0:
-      dan = "Nedjelja";
+      dan = 'Nedjelja';
       break;
     case 1:
-      dan = "Ponedjeljak";
+      dan = 'Ponedjeljak';
       break;
     case 2:
-      dan = "Utorak";
+      dan = 'Utorak';
       break;
     case 3:
-      dan = "Srijeda";
+      dan = 'Srijeda';
       break;
     case 4:
-      dan = "Četvrtak";
+      dan = 'Četvrtak';
       break;
     case 5:
-      dan = "Petak";
+      dan = 'Petak';
       break;
     case 6:
-      dan = "Subota";
+      dan = 'Subota';
   }
   return dan;
 }
@@ -102,7 +102,7 @@ export function kolonaDatum(datum, brojIteracije) {
       pomocniDatum = dodajDane(pomocniDatum, -1);
       if (
         !(
-          praznici[pomocniDatum.toLocaleDateString("en-CA")] ||
+          praznici[pomocniDatum.toLocaleDateString('en-CA')] ||
           pomocniDatum.getDay() === 0 ||
           pomocniDatum.getDay() === 6
         )
@@ -117,7 +117,7 @@ export function kolonaDatum(datum, brojIteracije) {
     pomocniDatum = dodajDane(pomocniDatum, 1);
     if (
       !(
-        praznici[pomocniDatum.toLocaleDateString("en-CA")] ||
+        praznici[pomocniDatum.toLocaleDateString('en-CA')] ||
         pomocniDatum.getDay() === 0 ||
         pomocniDatum.getDay() === 6
       )
@@ -138,7 +138,7 @@ export function prviRadniDanPrije(datum) {
   while (true) {
     if (
       !(
-        praznici[pomocniDatum.toLocaleDateString("en-CA")] ||
+        praznici[pomocniDatum.toLocaleDateString('en-CA')] ||
         pomocniDatum.getDay() === 0 ||
         pomocniDatum.getDay() === 6
       )
@@ -173,32 +173,32 @@ function brojDana(pocetak, kraj) {
 }
 
 export const praznici = {
-  "2022-01-01": "Nova Godina",
-  "2022-01-06": "Sveta tri kralja",
-  "2022-04-17": "Uskrs",
-  "2022-04-18": "Uskrsni ponedjeljak",
-  "2022-05-01": "Praznik rada",
-  "2022-05-30": "Dan državnosti",
-  "2022-06-16": "Tijelovo",
-  "2022-06-22": "Dan antifašističke borbe",
-  "2022-08-05": "Dan domovinske zahvalnosti",
-  "2022-08-15": "Velika Gospa",
-  "2022-11-01": "Dan svih svetih",
-  "2022-11-18": "Sjećanje na Vukovar",
-  "2022-12-25": "Božić",
-  "2022-12-26": "Sveti Stjepan",
-  "2023-01-01": "Nova Godina",
-  "2023-01-06": "Sveta tri kralja",
-  "2023-04-09": "Uskrs",
-  "2023-04-10": "Uskrsni ponedjeljak",
-  "2023-05-01": "Praznik rada",
-  "2023-05-30": "Dan državnosti",
-  "2023-06-08": "Tijelovo",
-  "2023-06-22": "Dan antifašističke borbe",
-  "2023-08-05": "Dan domovinske zahvalnosti",
-  "2023-08-15": "Velika Gospa",
-  "2023-11-01": "Dan svih svetih",
-  "2023-11-18": "Sjećanje na Vukovar",
-  "2023-12-25": "Božić",
-  "2023-12-26": "Sveti Stjepan",
+  '2022-01-01': 'Nova Godina',
+  '2022-01-06': 'Sveta tri kralja',
+  '2022-04-17': 'Uskrs',
+  '2022-04-18': 'Uskrsni ponedjeljak',
+  '2022-05-01': 'Praznik rada',
+  '2022-05-30': 'Dan državnosti',
+  '2022-06-16': 'Tijelovo',
+  '2022-06-22': 'Dan antifašističke borbe',
+  '2022-08-05': 'Dan domovinske zahvalnosti',
+  '2022-08-15': 'Velika Gospa',
+  '2022-11-01': 'Dan svih svetih',
+  '2022-11-18': 'Sjećanje na Vukovar',
+  '2022-12-25': 'Božić',
+  '2022-12-26': 'Sveti Stjepan',
+  '2023-01-01': 'Nova Godina',
+  '2023-01-06': 'Sveta tri kralja',
+  '2023-04-09': 'Uskrs',
+  '2023-04-10': 'Uskrsni ponedjeljak',
+  '2023-05-01': 'Praznik rada',
+  '2023-05-30': 'Dan državnosti',
+  '2023-06-08': 'Tijelovo',
+  '2023-06-22': 'Dan antifašističke borbe',
+  '2023-08-05': 'Dan domovinske zahvalnosti',
+  '2023-08-15': 'Velika Gospa',
+  '2023-11-01': 'Dan svih svetih',
+  '2023-11-18': 'Sjećanje na Vukovar',
+  '2023-12-25': 'Božić',
+  '2023-12-26': 'Sveti Stjepan',
 };
