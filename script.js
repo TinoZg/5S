@@ -26,7 +26,7 @@ let osobe = [
   'Zagy',
 ];
 
-const danas = new Date('2023-01-26');
+const danas = new Date();
 danas.setHours(1, 0, 0);
 
 // Datum formatiran u oblik dd.mm.yyyy
