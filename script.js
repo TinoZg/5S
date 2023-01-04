@@ -6,23 +6,24 @@ import {
   praznici,
   kolonaDatum,
   prviRadniDanPrije,
-} from "./utilities.js";
+} from './utilities.js';
 
 let osobe = [
-  "Ante",
-  "Jo",
-  "Filip",
-  "Ivona",
-  "Zvonac",
-  "Antonio",
-  "Karlo",
-  "Tin",
-  "Ena",
-  "Kia",
-  "Marko",
-  "Zagy",
-  "Sljiva",
-  "Tino",
+  'Sljiva',
+  'Tino',
+  'Ante',
+  'Jo',
+  'Filip',
+  'Ivona',
+  'Zvonac',
+  'Antonio',
+  'Karlo',
+  'Tin',
+  'Ena',
+  'Kia',
+  'Marko',
+  'Studenti',
+  'Zagy',
 ];
 
 const danas = new Date();
