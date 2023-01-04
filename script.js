@@ -6,26 +6,27 @@ import {
   praznici,
   kolonaDatum,
   prviRadniDanPrije,
-} from "./utilities.js";
+} from './utilities.js';
 
 let osobe = [
-  "Ante",
-  "Jo",
-  "Filip",
-  "Ivona",
-  "Zvonac",
-  "Antonio",
-  "Karlo",
-  "Tin",
-  "Ena",
-  "Kia",
-  "Marko",
-  "Zagy",
-  "Sljiva",
-  "Tino",
+  'Sljiva',
+  'Tino',
+  'Ante',
+  'Jo',
+  'Filip',
+  'Ivona',
+  'Zvonac',
+  'Antonio',
+  'Karlo',
+  'Tin',
+  'Ena',
+  'Kia',
+  'Marko',
+  'Studenti',
+  'Zagy',
 ];
 
-const danas = new Date();
+const danas = new Date('2023-01-26');
 danas.setHours(1, 0, 0);
 
 // Datum formatiran u oblik dd.mm.yyyy
