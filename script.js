@@ -11,10 +11,9 @@ import {
 let osobe = [
   'Sljiva',
   'Tino',
-  'Ante',
   'Jo',
   'Filip',
-  'Ivona',
+  'Petra',
   'Zvonac',
   'Antonio',
   'Karlo',
