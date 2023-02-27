@@ -5,7 +5,7 @@
  * @returns {integer}
  */
 export function brojRadnihDanaDo(datum, praznici) {
-  let pocetak = new Date('2023-01-04');
+  let pocetak = new Date('2023-02-16');
   const ukupnoDana = brojDana(pocetak, datum);
   let brojRadnihDana = 0;
   for (let i = 0; i < ukupnoDana; i++) {
