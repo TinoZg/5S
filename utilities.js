@@ -1,11 +1,12 @@
 /**
- * Funkcija vraća broj radnih dana od fiksnog datuma do danas. Preskačemo vikende i praznike
+ * Funkcija vraća broj radnih dana od fiksnog datuma do danas.
+ * Preskačemo vikende i praznike i ponedjeljak jer je Mirči fiksno ponedjeljkom
  * @param {Date} datum - datum do kojeg brojimo radne dane
  * @param {Object} praznici - datumi praznika
  * @returns {integer}
  */
 export function brojRadnihDanaDo(datum, praznici) {
-  let pocetak = new Date('2023-02-16');
+  let pocetak = new Date('2023-03-22');
   const ukupnoDana = brojDana(pocetak, datum);
   let brojRadnihDana = 0;
   for (let i = 0; i < ukupnoDana; i++) {
@@ -14,6 +15,7 @@ export function brojRadnihDanaDo(datum, praznici) {
       !(
         praznici[pocetak.toLocaleDateString('en-CA')] ||
         pocetak.getDay() === 0 ||
+        pocetak.getDay() === 1 ||
         pocetak.getDay() === 6
       )
     ) {

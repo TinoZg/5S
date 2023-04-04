@@ -14,6 +14,7 @@ let osobe = [
   'Jo',
   'Filip',
   'Petra',
+  'Marin',
   'Zvonac',
   'Antonio',
   'Karlo',
@@ -36,10 +37,19 @@ osobe = pomakniRasporedZa(osobe, dana);
 
 const radniDan = prviRadniDanPrije(danas);
 
-for (let i = 0; i < osobe.length; i++) {
+// Ako je ponedjeljak, fiksno stavljamo Mirči kao osobu
+let i = 0;
+let j = 0;
+while (i < osobe.length) {
   const element = osobe[i];
-  const [osoba, datum, dan] = document.getElementById(i).children;
-  osoba.innerText = element;
-  datum.innerText = formatDDMMYYYY(kolonaDatum(radniDan, i - 1));
-  dan.innerText = danUTjednu(kolonaDatum(radniDan, i - 1));
+  const [osoba, datum, dan] = document.getElementById(j).children;
+  if (danUTjednu(kolonaDatum(radniDan, j - 1)) == 'Ponedjeljak') {
+    osoba.innerText = 'Mirči';
+  } else {
+    osoba.innerText = element;
+    i++;
+  }
+  datum.innerText = formatDDMMYYYY(kolonaDatum(radniDan, j - 1));
+  dan.innerText = danUTjednu(kolonaDatum(radniDan, j - 1));
+  j++;
 }
