@@ -6,6 +6,7 @@ import {
   praznici,
   kolonaDatum,
   prviRadniDanPrije,
+  addRow,
 } from './utilities.js';
 
 let osobe = [
@@ -16,7 +17,7 @@ let osobe = [
   'Petra',
   'Marin',
   'Zvonac',
-  'Antonio',
+  'Antonijo',
   'Karlo',
   'Tin',
   'Ena',
@@ -42,14 +43,15 @@ let i = 0;
 let j = 0;
 while (i < osobe.length) {
   const element = osobe[i];
-  const [osoba, datum, dan] = document.getElementById(j).children;
+  const datum = formatDDMMYYYY(kolonaDatum(radniDan, j - 1));
+  const dan = danUTjednu(kolonaDatum(radniDan, j - 1));
+
   if (danUTjednu(kolonaDatum(radniDan, j - 1)) == 'Ponedjeljak') {
-    osoba.innerText = 'Mirči';
+    addRow('Mirči', datum, dan, j);
   } else {
-    osoba.innerText = element;
+    addRow(element, datum, dan, j);
     i++;
   }
-  datum.innerText = formatDDMMYYYY(kolonaDatum(radniDan, j - 1));
-  dan.innerText = danUTjednu(kolonaDatum(radniDan, j - 1));
+
   j++;
 }
