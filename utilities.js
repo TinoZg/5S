@@ -6,17 +6,18 @@
  * @returns {integer}
  */
 export function brojRadnihDanaDo(datum, praznici) {
-  let pocetak = new Date('2023-03-23');
+  let pocetak = new Date('2023-03-27');
   const ukupnoDana = brojDana(pocetak, datum);
   let brojRadnihDana = 0;
   for (let i = 0; i < ukupnoDana; i++) {
     pocetak = dodajDane(pocetak, 1);
     if (
       !(
-        praznici[pocetak.toLocaleDateString('en-CA')] ||
-        pocetak.getDay() === 0 ||
-        pocetak.getDay() === 1 ||
-        pocetak.getDay() === 6
+        (praznici[pocetak.toLocaleDateString('en-CA')] ||
+          pocetak.getDay() === 0 ||
+          pocetak.getDay() === 1 ||
+          pocetak.getDay() === 6) &&
+        (praznici[pocetak.toLocaleDateString('en-CA')] || pocetak.getDay() != 1)
       )
     ) {
       brojRadnihDana++;
