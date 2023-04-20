@@ -1,6 +1,5 @@
 /**
- * Funkcija vraća broj radnih dana od fiksnog datuma do danas.
- * Preskačemo vikende i praznike i ponedjeljak jer je Mirči fiksno ponedjeljkom
+ * Funkcija vraća broj radnih dana od fiksnog datuma do danas. Preskačemo vikende i praznike
  * @param {Date} datum - datum do kojeg brojimo radne dane
  * @param {Object} praznici - datumi praznika
  * @returns {integer}
@@ -175,32 +174,6 @@ function brojDana(pocetak, kraj) {
   const razlikaDana = Math.round(razlika / jedanDan);
 
   return razlikaDana;
-}
-
-/**
- * Funkcija za dinamičko dodavanje retka u tablici
- * @param {string} osoba - osoba zadužena za 5S
- * @param {Date} datum - datum zaduženja za 5S
- * @param {integer} dan - dan u tjednu
- * @param {integer} brRedak - broj retka u tablici - 1
- */
-export function addRow(osoba, datum, dan, brRedak) {
-  const tbody = document.querySelector('tbody');
-  const tr = document.createElement('tr');
-  if (brRedak == 1) {
-    tr.classList.add('table-danger');
-  }
-  const td1 = document.createElement('td');
-  const td2 = document.createElement('td');
-  const td3 = document.createElement('td');
-  td1.innerHTML = osoba;
-  td2.innerHTML = datum;
-  td3.innerHTML = dan;
-
-  tr.appendChild(td1);
-  tr.appendChild(td2);
-  tr.appendChild(td3);
-  tbody.appendChild(tr);
 }
 
 export const praznici = {
