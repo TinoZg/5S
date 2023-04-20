@@ -14,6 +14,7 @@ let osobe = [
   'Jo',
   'Filip',
   'Petra',
+  'Marin',
   'Zvonac',
   'Antonio',
   'Karlo',

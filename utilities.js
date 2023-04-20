@@ -5,7 +5,7 @@
  * @returns {integer}
  */
 export function brojRadnihDanaDo(datum, praznici) {
-  let pocetak = new Date('2023-02-16');
+  let pocetak = new Date('2023-04-19');
   const ukupnoDana = brojDana(pocetak, datum);
   let brojRadnihDana = 0;
   for (let i = 0; i < ukupnoDana; i++) {
@@ -14,6 +14,7 @@ export function brojRadnihDanaDo(datum, praznici) {
       !(
         praznici[pocetak.toLocaleDateString('en-CA')] ||
         pocetak.getDay() === 0 ||
+        pocetak.getDay() === 1 ||
         pocetak.getDay() === 6
       )
     ) {
@@ -104,6 +105,7 @@ export function kolonaDatum(datum, brojIteracije) {
         !(
           praznici[pomocniDatum.toLocaleDateString('en-CA')] ||
           pomocniDatum.getDay() === 0 ||
+          pomocniDatum.getDay() === 1 ||
           pomocniDatum.getDay() === 6
         )
       ) {
@@ -119,6 +121,7 @@ export function kolonaDatum(datum, brojIteracije) {
       !(
         praznici[pomocniDatum.toLocaleDateString('en-CA')] ||
         pomocniDatum.getDay() === 0 ||
+        pomocniDatum.getDay() === 1 ||
         pomocniDatum.getDay() === 6
       )
     ) {
@@ -140,6 +143,7 @@ export function prviRadniDanPrije(datum) {
       !(
         praznici[pomocniDatum.toLocaleDateString('en-CA')] ||
         pomocniDatum.getDay() === 0 ||
+        pomocniDatum.getDay() === 1 ||
         pomocniDatum.getDay() === 6
       )
     ) {
